@@ -1,0 +1,1 @@
+User.create(email: 'superadmin@coeng.co.za', first_name: 'Super', surname: 'Admin', user_type: 'super_admin', status: 'active', password: 'superadmin123')

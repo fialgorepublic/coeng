@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: fahad
+  password: 11223344
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: coeng_development
+
+test:
+  <<: *default
+  database: coeng_test
+
+production:
+  <<: *default
+  database: coeng_production
+  username: coeng
+  password: <%= ENV['COENG_DATABASE_PASSWORD'] %>
