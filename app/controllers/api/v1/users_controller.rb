@@ -12,8 +12,6 @@ class Api::V1::UsersController < Api::BaseController
   
   def create
     user = User.new(user_params)
-    binding.pry
-    user.permissions = JSON.parse(params[:permissions]) if params[:permissions].present?
     if user.save
       json_success_response('User Successfully Created.', user)
     else
